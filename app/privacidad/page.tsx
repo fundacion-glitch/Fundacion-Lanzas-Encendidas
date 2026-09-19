@@ -1,0 +1,9 @@
+import type { Metadata } from "next";
+
+export const metadata: Metadata = { title: "Política de privacidad", alternates: { canonical: "/privacidad" } };
+
+export default function PrivacidadPage() {
+  return (
+    <section className="section-pad bg-[#FCFBF8]"><div className="page-shell max-w-3xl"><p className="eyebrow">Privacidad</p><h1 className="section-title mt-4">Política de privacidad</h1><p className="mt-5 text-sm text-stone-500">Versión inicial del MVP · última actualización: septiembre de 2026</p><div className="mt-10 space-y-8 text-base leading-8 text-stone-700"><section><h2 className="text-xl font-semibold text-stone-950">Información que recopilamos</h2><p className="mt-3">Esta primera versión no incluye formularios, cuentas de usuario, pagos en línea ni herramientas propias de seguimiento. Por tanto, el sitio no solicita datos personales directamente.</p></section><section><h2 className="text-xl font-semibold text-stone-950">Canales externos</h2><p className="mt-3">Si te comunicas mediante correo, WhatsApp o redes sociales, el tratamiento de la información también estará sujeto a las políticas de esas plataformas.</p></section><section><h2 className="text-xl font-semibold text-stone-950">Donaciones</h2><p className="mt-3">El sitio no procesa pagos ni almacena información bancaria. Las transferencias se realizan fuera de esta web utilizando datos oficiales publicados por la Fundación.</p></section><section><h2 className="text-xl font-semibold text-stone-950">Actualizaciones</h2><p className="mt-3">Esta política deberá revisarse antes de habilitar formularios, analítica, pagos, suscripciones u otras funciones que recopilen información.</p></section></div></div></section>
+  );
+}
