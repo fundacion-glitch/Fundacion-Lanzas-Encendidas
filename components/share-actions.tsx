@@ -1,11 +1,20 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useSyncExternalStore } from "react";
 import { Check, Copy, MessageCircle, Share2 } from "lucide-react";
+
+function subscribeToUrlChange(onChange: () => void) {
+  window.addEventListener("popstate", onChange);
+  window.addEventListener("hashchange", onChange);
+  return () => {
+    window.removeEventListener("popstate", onChange);
+    window.removeEventListener("hashchange", onChange);
+  };
+}
 
 export function ShareActions({ title }: { title: string }) {
   const [copied, setCopied] = useState(false);
-  const url = typeof window === "undefined" ? "" : window.location.href;
+  const url = useSyncExternalStore(subscribeToUrlChange, () => window.location.href, () => "");
   const encoded = encodeURIComponent(url);
   const text = encodeURIComponent(title);
 

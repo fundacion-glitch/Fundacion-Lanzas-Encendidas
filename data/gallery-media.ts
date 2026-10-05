@@ -1,0 +1,497 @@
+/**
+ * Prepared gallery media only; no UI integration.
+ * Public URLs omit the public/ directory. Dimensions honor source orientation.
+ * Initial order follows original filenames within images, then videos; IDs are stable.
+ * Keep descriptive fields null until reviewed. Date is an optional YYYY-MM-DD value,
+ * not inferred from filenames. Video src points to the unchanged original MP4.
+ * Photos: uncropped WebP, quality 82, maximum 1600px long edge, no enlargement.
+ * Posters: WebP, quality 78, maximum 640px long edge, no enlargement.
+ * Original SHA-256 values record the source bytes at preparation time.
+ */
+export type GalleryOrientation = "landscape" | "portrait" | "square";
+
+interface GalleryMediaBase {
+  id: string;
+  src: string;
+  originalSrc: string;
+  originalSha256: string;
+  originalBytes: number;
+  width: number;
+  height: number;
+  orientation: GalleryOrientation;
+  alt: string | null;
+  caption: string | null;
+  activity: string | null;
+  date: string | null;
+  order: number;
+}
+
+export interface GalleryImage extends GalleryMediaBase {
+  type: "image";
+  displayBytes: number;
+}
+
+export interface GalleryVideo extends GalleryMediaBase {
+  type: "video";
+  durationSeconds: number;
+  hasAudio: boolean;
+  poster: string;
+  posterWidth: number;
+  posterHeight: number;
+  posterBytes: number;
+  posterTimeSeconds: number;
+}
+
+export type GalleryMedia = GalleryImage | GalleryVideo;
+
+export const galleryMedia: readonly GalleryMedia[] = [
+  {
+    "id": "gallery-01",
+    "type": "image",
+    "src": "/images/galeria/optimized/gallery-01.webp",
+    "originalSrc": "/images/galeria/fotos/2181c302-f3e5-4d2a-90a4-c8e914bfdd36.JPG",
+    "originalSha256": "39ba36f60563ed6c947891f0924dc558efa76c3567331867825cdc285779781b",
+    "originalBytes": 271795,
+    "width": 1600,
+    "height": 1142,
+    "orientation": "landscape",
+    "alt": null,
+    "caption": null,
+    "activity": null,
+    "date": null,
+    "order": 1,
+    "displayBytes": 246566
+  },
+  {
+    "id": "gallery-02",
+    "type": "image",
+    "src": "/images/galeria/optimized/gallery-02.webp",
+    "originalSrc": "/images/galeria/fotos/2372f86c-fd8d-4ecb-b14c-137312876fcb.JPG",
+    "originalSha256": "a8fce51694f140d0099ba27c4ea8121c9d0409269f6a10ca5b1b8e6ab27bd684",
+    "originalBytes": 1529961,
+    "width": 1600,
+    "height": 1200,
+    "orientation": "landscape",
+    "alt": null,
+    "caption": null,
+    "activity": null,
+    "date": null,
+    "order": 2,
+    "displayBytes": 223430
+  },
+  {
+    "id": "gallery-03",
+    "type": "image",
+    "src": "/images/galeria/optimized/gallery-03.webp",
+    "originalSrc": "/images/galeria/fotos/3f12301c-00f9-475b-b20f-43a0cfb59706.JPG",
+    "originalSha256": "c1f5d6460e66c1defdc356553fd05f50c92c2baa9b86f6fcf3a8afea88781388",
+    "originalBytes": 457974,
+    "width": 1600,
+    "height": 1200,
+    "orientation": "landscape",
+    "alt": null,
+    "caption": null,
+    "activity": null,
+    "date": null,
+    "order": 3,
+    "displayBytes": 284116
+  },
+  {
+    "id": "gallery-04",
+    "type": "image",
+    "src": "/images/galeria/optimized/gallery-04.webp",
+    "originalSrc": "/images/galeria/fotos/77298979-40FA-4B70-BAAC-A1282A7CF001.JPG",
+    "originalSha256": "0d2258bfde249e870b437fc141053d20920c267a2e5a5f49a1dec02c32f419a1",
+    "originalBytes": 947038,
+    "width": 900,
+    "height": 1600,
+    "orientation": "portrait",
+    "alt": null,
+    "caption": null,
+    "activity": null,
+    "date": null,
+    "order": 4,
+    "displayBytes": 211756
+  },
+  {
+    "id": "gallery-05",
+    "type": "image",
+    "src": "/images/galeria/optimized/gallery-05.webp",
+    "originalSrc": "/images/galeria/fotos/8303f24b-20b3-4c24-84f5-e5ddd96acff3 (1).JPG",
+    "originalSha256": "75486c61ebdbee94d5560708072f3d3e220d4839af94e7d578e5933259bcd276",
+    "originalBytes": 485492,
+    "width": 1200,
+    "height": 1600,
+    "orientation": "portrait",
+    "alt": null,
+    "caption": null,
+    "activity": null,
+    "date": null,
+    "order": 5,
+    "displayBytes": 309382
+  },
+  {
+    "id": "gallery-06",
+    "type": "image",
+    "src": "/images/galeria/optimized/gallery-06.webp",
+    "originalSrc": "/images/galeria/fotos/IMG_3859.jpg",
+    "originalSha256": "5ecaa834dc986c6fb6138f4bc4d71f3976fbc12b05b1e4dd61f074bcab552cc2",
+    "originalBytes": 3978369,
+    "width": 1200,
+    "height": 1600,
+    "orientation": "portrait",
+    "alt": null,
+    "caption": null,
+    "activity": null,
+    "date": null,
+    "order": 6,
+    "displayBytes": 319812
+  },
+  {
+    "id": "gallery-07",
+    "type": "image",
+    "src": "/images/galeria/optimized/gallery-07.webp",
+    "originalSrc": "/images/galeria/fotos/IMG_7856.jpg",
+    "originalSha256": "e32e6de02d7c03d8f57561f7d5e00ef298f93d4545615a895270dce7af2ec88e",
+    "originalBytes": 4656801,
+    "width": 1600,
+    "height": 1200,
+    "orientation": "landscape",
+    "alt": null,
+    "caption": null,
+    "activity": null,
+    "date": null,
+    "order": 7,
+    "displayBytes": 463556
+  },
+  {
+    "id": "gallery-08",
+    "type": "image",
+    "src": "/images/galeria/optimized/gallery-08.webp",
+    "originalSrc": "/images/galeria/fotos/IMG_8359.jpg",
+    "originalSha256": "32788f32558981e6297d28fa1ab06d273476e30c880baac11d9050ef4f45516c",
+    "originalBytes": 3260640,
+    "width": 1600,
+    "height": 1200,
+    "orientation": "landscape",
+    "alt": null,
+    "caption": null,
+    "activity": null,
+    "date": null,
+    "order": 8,
+    "displayBytes": 264072
+  },
+  {
+    "id": "gallery-09",
+    "type": "image",
+    "src": "/images/galeria/optimized/gallery-09.webp",
+    "originalSrc": "/images/galeria/fotos/IMG_8367.jpg",
+    "originalSha256": "bce016e45ec151ca2c9adab1e525ddf123031f5ed7c250e1b20c9ef9478e639f",
+    "originalBytes": 4140378,
+    "width": 1600,
+    "height": 1200,
+    "orientation": "landscape",
+    "alt": null,
+    "caption": null,
+    "activity": null,
+    "date": null,
+    "order": 9,
+    "displayBytes": 374200
+  },
+  {
+    "id": "gallery-10",
+    "type": "image",
+    "src": "/images/galeria/optimized/gallery-10.webp",
+    "originalSrc": "/images/galeria/fotos/IMG_9055.jpg",
+    "originalSha256": "be9a8c536c6b827ffa1976246b3ee55a6829f7e55747edb156690e54b80ba7ab",
+    "originalBytes": 2590769,
+    "width": 1200,
+    "height": 1600,
+    "orientation": "portrait",
+    "alt": null,
+    "caption": null,
+    "activity": null,
+    "date": null,
+    "order": 10,
+    "displayBytes": 181412
+  },
+  {
+    "id": "gallery-11",
+    "type": "image",
+    "src": "/images/galeria/optimized/gallery-11.webp",
+    "originalSrc": "/images/galeria/fotos/PHOTO-2026-09-02-18-59-23.jpg",
+    "originalSha256": "27acedbdd05bf663c82c7363381de70e9d4c3064987631a4cf2a3bf439a9006d",
+    "originalBytes": 271450,
+    "width": 900,
+    "height": 1600,
+    "orientation": "portrait",
+    "alt": null,
+    "caption": null,
+    "activity": null,
+    "date": null,
+    "order": 11,
+    "displayBytes": 229002
+  },
+  {
+    "id": "gallery-12",
+    "type": "image",
+    "src": "/images/galeria/optimized/gallery-12.webp",
+    "originalSrc": "/images/galeria/fotos/WhatsApp Image 2026-09-28 at 9.17.27 AM.jpeg",
+    "originalSha256": "9a726b7b2fbc85a48a7133ca2ddfd889e6b44b80ee983481743058e39a39cc1b",
+    "originalBytes": 123631,
+    "width": 960,
+    "height": 1280,
+    "orientation": "portrait",
+    "alt": null,
+    "caption": null,
+    "activity": null,
+    "date": null,
+    "order": 12,
+    "displayBytes": 98692
+  },
+  {
+    "id": "gallery-13",
+    "type": "image",
+    "src": "/images/galeria/optimized/gallery-13.webp",
+    "originalSrc": "/images/galeria/fotos/WhatsApp Image 2026-09-28 at 9.17.37 AM.jpeg",
+    "originalSha256": "3eb2c7a5f67d70e74ba3b3b6a885dd6e16efef5d5b4e6baeb6ddad8a8e01ce1c",
+    "originalBytes": 87503,
+    "width": 720,
+    "height": 1280,
+    "orientation": "portrait",
+    "alt": null,
+    "caption": null,
+    "activity": null,
+    "date": null,
+    "order": 13,
+    "displayBytes": 65418
+  },
+  {
+    "id": "gallery-14",
+    "type": "image",
+    "src": "/images/galeria/optimized/gallery-14.webp",
+    "originalSrc": "/images/galeria/fotos/WhatsApp Image 2026-09-28 at 9.17.52 AM.jpeg",
+    "originalSha256": "399c6c320c6ccad29741a6d56ccac0f994c185bc0091935ee4c4ce13cd5bc34c",
+    "originalBytes": 142310,
+    "width": 960,
+    "height": 1280,
+    "orientation": "portrait",
+    "alt": null,
+    "caption": null,
+    "activity": null,
+    "date": null,
+    "order": 14,
+    "displayBytes": 116412
+  },
+  {
+    "id": "gallery-15",
+    "type": "image",
+    "src": "/images/galeria/optimized/gallery-15.webp",
+    "originalSrc": "/images/galeria/fotos/WhatsApp Image 2026-09-28 at 9.18.04 AM.jpeg",
+    "originalSha256": "065441ef23e1bfe69e542fddff0d024ca823bd93a8d0a130aba493aaf972619a",
+    "originalBytes": 173667,
+    "width": 960,
+    "height": 1280,
+    "orientation": "portrait",
+    "alt": null,
+    "caption": null,
+    "activity": null,
+    "date": null,
+    "order": 15,
+    "displayBytes": 153182
+  },
+  {
+    "id": "gallery-16",
+    "type": "image",
+    "src": "/images/galeria/optimized/gallery-16.webp",
+    "originalSrc": "/images/galeria/fotos/d3f8119f-09be-475f-a641-700417523498.JPG",
+    "originalSha256": "149368b9dae3c7af1c797e66f2d1b285795ddf1296dfeaf38e6f1e49d3f84a06",
+    "originalBytes": 1590314,
+    "width": 1200,
+    "height": 1600,
+    "orientation": "portrait",
+    "alt": null,
+    "caption": null,
+    "activity": null,
+    "date": null,
+    "order": 16,
+    "displayBytes": 231192
+  },
+  {
+    "id": "gallery-17",
+    "type": "image",
+    "src": "/images/galeria/optimized/gallery-17.webp",
+    "originalSrc": "/images/galeria/fotos/f4649d99-9923-4809-87f5-6edef821f0bb.JPG",
+    "originalSha256": "1f7c61f350942c0f6e2665328b8964bab26f6f5d373cd4b48ffa6e458816b7f2",
+    "originalBytes": 389194,
+    "width": 1600,
+    "height": 1142,
+    "orientation": "landscape",
+    "alt": null,
+    "caption": null,
+    "activity": null,
+    "date": null,
+    "order": 17,
+    "displayBytes": 226344
+  },
+  {
+    "id": "gallery-18",
+    "type": "image",
+    "src": "/images/galeria/optimized/gallery-18.webp",
+    "originalSrc": "/images/galeria/fotos/f97e3bbe-2edb-47fd-ad5e-d0ea821c8d64.JPG",
+    "originalSha256": "a15c80a08adb4cf75f52b0df6365ef2ba5299b4eccd236c04cde54e1dbf41a0a",
+    "originalBytes": 293235,
+    "width": 1600,
+    "height": 1066,
+    "orientation": "landscape",
+    "alt": null,
+    "caption": null,
+    "activity": null,
+    "date": null,
+    "order": 18,
+    "displayBytes": 181028
+  },
+  {
+    "id": "gallery-video-01",
+    "type": "video",
+    "src": "/images/galeria/videos/WhatsApp Video 2026-09-28 at 9.14.07 AM.mp4",
+    "originalSrc": "/images/galeria/videos/WhatsApp Video 2026-09-28 at 9.14.07 AM.mp4",
+    "originalSha256": "dd5fe975dec0b17314accaac7f74aec91f4717ddf8ca3ba59a763ae81416b2da",
+    "originalBytes": 1303561,
+    "width": 464,
+    "height": 832,
+    "orientation": "portrait",
+    "alt": null,
+    "caption": null,
+    "activity": null,
+    "date": null,
+    "order": 19,
+    "durationSeconds": 8.431655328798186,
+    "hasAudio": true,
+    "poster": "/images/galeria/posters/gallery-video-01.webp",
+    "posterWidth": 357,
+    "posterHeight": 640,
+    "posterBytes": 18496,
+    "posterTimeSeconds": 1
+  },
+  {
+    "id": "gallery-video-02",
+    "type": "video",
+    "src": "/images/galeria/videos/WhatsApp Video 2026-09-28 at 9.20.21 AM.mp4",
+    "originalSrc": "/images/galeria/videos/WhatsApp Video 2026-09-28 at 9.20.21 AM.mp4",
+    "originalSha256": "d7b7b285203e4a5a966d4f62565dd56b5379547a4589a0ddbb10075b3ed84887",
+    "originalBytes": 104207,
+    "width": 202,
+    "height": 360,
+    "orientation": "portrait",
+    "alt": null,
+    "caption": null,
+    "activity": null,
+    "date": null,
+    "order": 20,
+    "durationSeconds": 5.06,
+    "hasAudio": false,
+    "poster": "/images/galeria/posters/gallery-video-02.webp",
+    "posterWidth": 202,
+    "posterHeight": 360,
+    "posterBytes": 9594,
+    "posterTimeSeconds": 0
+  },
+  {
+    "id": "gallery-video-03",
+    "type": "video",
+    "src": "/images/galeria/videos/WhatsApp Video 2026-09-28 at 9.20.44 AM.mp4",
+    "originalSrc": "/images/galeria/videos/WhatsApp Video 2026-09-28 at 9.20.44 AM.mp4",
+    "originalSha256": "2d20df12a203faa5593f9e134788a84e0d75cda6c54fbcbeb5723d16bb31a373",
+    "originalBytes": 4298430,
+    "width": 352,
+    "height": 624,
+    "orientation": "portrait",
+    "alt": null,
+    "caption": null,
+    "activity": null,
+    "date": null,
+    "order": 21,
+    "durationSeconds": 35.47,
+    "hasAudio": true,
+    "poster": "/images/galeria/posters/gallery-video-03.webp",
+    "posterWidth": 352,
+    "posterHeight": 624,
+    "posterBytes": 13678,
+    "posterTimeSeconds": 1
+  },
+  {
+    "id": "gallery-video-04",
+    "type": "video",
+    "src": "/images/galeria/videos/WhatsApp Video 2026-09-28 at 9.21.48 AM.mp4",
+    "originalSrc": "/images/galeria/videos/WhatsApp Video 2026-09-28 at 9.21.48 AM.mp4",
+    "originalSha256": "2c808ab7885b6555e8d15f575637834c29ea32264dc289e448505a6176ed735b",
+    "originalBytes": 4029675,
+    "width": 464,
+    "height": 832,
+    "orientation": "portrait",
+    "alt": null,
+    "caption": null,
+    "activity": null,
+    "date": null,
+    "order": 22,
+    "durationSeconds": 24.565,
+    "hasAudio": false,
+    "poster": "/images/galeria/posters/gallery-video-04.webp",
+    "posterWidth": 357,
+    "posterHeight": 640,
+    "posterBytes": 17656,
+    "posterTimeSeconds": 1
+  },
+  {
+    "id": "gallery-19",
+    "type": "image",
+    "src": "/images/galeria/optimized/gallery-19.webp",
+    "originalSrc": "/images/galeria/fotos/82c62ef8-ff68-4508-9547-b449ac93eba5.JPG",
+    "originalSha256": "7a25565ac7816468c66c846fd91f4a5c416f92dd893cc796a321de889fe75bc4",
+    "originalBytes": 1323574,
+    "width": 1600,
+    "height": 1200,
+    "orientation": "landscape",
+    "alt": null,
+    "caption": null,
+    "activity": null,
+    "date": null,
+    "order": 23,
+    "displayBytes": 184250
+  },
+  {
+    "id": "gallery-20",
+    "type": "image",
+    "src": "/images/galeria/optimized/gallery-20.webp",
+    "originalSrc": "/images/galeria/fotos/9a374f20-effe-4907-9489-5e635ee81345.JPG",
+    "originalSha256": "5f2cc69127bab8e2e183f375e3f7114b72d6e651e211a9f6e7940501dc1a6772",
+    "originalBytes": 388984,
+    "width": 1200,
+    "height": 1600,
+    "orientation": "portrait",
+    "alt": null,
+    "caption": null,
+    "activity": null,
+    "date": null,
+    "order": 24,
+    "displayBytes": 233036
+  },
+  {
+    "id": "gallery-21",
+    "type": "image",
+    "src": "/images/galeria/optimized/gallery-21.webp",
+    "originalSrc": "/images/galeria/fotos/IMG_8358.jpg",
+    "originalSha256": "9c041ded3171242c2c9994692a83b3c23f29884b5be11e17ca5ec3b13a47f4d8",
+    "originalBytes": 3208231,
+    "width": 1600,
+    "height": 1200,
+    "orientation": "landscape",
+    "alt": null,
+    "caption": null,
+    "activity": null,
+    "date": null,
+    "order": 25,
+    "displayBytes": 276366
+  }
+];

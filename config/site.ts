@@ -8,15 +8,17 @@ export const siteConfig = {
   address:
     "Calle I, No. 16, Barrio Guachupita, Consuelo, San Pedro de Macorís, República Dominicana",
   area: "Todo el territorio nacional",
-  email: "",
-  rnc: "",
-  whatsapp: "",
+  email: "Info@fundacionlanzasencendidas.com",
+  rnc: "4-30-45171-1",
+  registration: "28974/2026",
+  provinceMunicipality: "San Pedro de Macorís, Municipio Consuelo",
+  whatsapp: "18096158218",
   whatsappDefaultMessage:
     "Hola, quisiera información sobre cómo realizar una donación a Fundación Lanzas Encendidas.",
   social: {
-    instagram: "",
-    facebook: "",
-    tiktok: "",
+    instagram: "https://www.instagram.com/f_lanzas_encendidas",
+    facebook: "https://www.facebook.com/profile.php?id=100071342854297",
+    tiktok: "https://www.tiktok.com/@f_lanzas_encendidas",
     youtube: "",
     x: "",
   },
@@ -25,14 +27,16 @@ export const siteConfig = {
     accountType: "PENDIENTE_DE_CONFIGURAR",
     accountNumber: "PENDIENTE_DE_CONFIGURAR",
     holder: "Fundación Lanzas Encendidas",
-    rnc: "PENDIENTE_DE_CONFIGURAR",
+    rnc: "4-30-45171-1",
   },
 } as const;
+
+export const contactWhatsAppUrl = `https://wa.me/${siteConfig.whatsapp.replace(/\D/g, "")}?text=${encodeURIComponent("Hola, quisiera comunicarme con Fundación Lanzas Encendidas.")}`;
 
 export const navItems = [
   { href: "/", label: "Inicio" },
   { href: "/nosotros", label: "Nosotros" },
-  { href: "/proyectos", label: "Proyectos" },
+  { href: "/galeria", label: "Galería" },
   { href: "/participa", label: "Participa" },
   { href: "/transparencia", label: "Transparencia" },
   { href: "/contacto", label: "Contacto" },

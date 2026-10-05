@@ -1,0 +1,13 @@
+# Imágenes de artículos solidarios
+
+Generadas con la herramienta integrada imagegen a partir de `public/images/galeria/fotos/MERCH.jpg`. La referencia permanece intacta. Son visualizaciones de producto, no fotografías documentales; no se incorporan al manifiesto de la galería real. La referencia muestra una camiseta de cuello redondo, no un polo con cuello y botones.
+
+Archivos web: `public/images/merch/poloshirt.webp` y `public/images/merch/gorra.webp` (1200 × 900, WebP calidad 90, sin recorte). Las tarjetas conservan la consulta por WhatsApp y explicitan el origen generado de las imágenes.
+
+## Prompt — camiseta
+
+Use case: product-mockup. Edit the supplied Foundation MERCH reference into a standalone catalog image of ONLY the white short-sleeved crew-neck shirt shown in it. Preserve the reference garment: WHITE ROUND NECK, NOT a collared polo. Remove the cap, red graphic background, MERCH heading and decorative backdrop. Reconstruct the small area of shirt obscured by the cap. Center the complete shirt, front view, sleeves and hem entirely visible, comfortably framed with 10% margins in a landscape 4:3 canvas. Clean warm ivory background #F5F1EA, subtle realistic studio shadows, natural cotton texture and gentle folds. Preserve the exact chest branding from the reference: red flame, gold spear and circular emblem, black FUNDACIÓN, gold LANZAS, red ENCENDIDAS, exact spelling and proportions. No model, person, hanger, price, extra text, added logos or accessories. This is a product visualization based on the supplied reference, not documentary photography. Save a standalone image suitable for a web product card.
+
+## Prompt — gorra
+
+Use case: product-mockup. Edit the supplied Foundation MERCH reference into a standalone catalog image of ONLY the white baseball cap shown in it. Remove the shirt, red background, MERCH heading and decorative backdrop. Preserve the reference cap shape, white color, curved brim, seams and front-centered red flame with gold spear and circular emblem. The cap carries ONLY the emblem, no words. Center the complete cap in a landscape 4:3 canvas with comfortable 10% margins, frontal slightly elevated view to show crown and brim, not cut off. Clean warm ivory background #F5F1EA, soft realistic studio lighting, subtle grounding shadow, natural fabric texture. Match the understated catalog presentation of a white shirt on the same ivory backdrop. No person, mannequin, additional products, prices, extra text or invented logos. This is a product visualization based on the supplied reference, not documentary photography. Save a standalone image suitable for a web product card.

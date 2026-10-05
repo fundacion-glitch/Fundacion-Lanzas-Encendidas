@@ -1,3 +1,4 @@
+import { sitePhotography } from "@/data/site-photography";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { Building2, CircleCheck, HeartHandshake, LockKeyhole, MessageCircle } from "lucide-react";
@@ -17,7 +18,7 @@ export default function DonarPage() {
   const bankReady = !siteConfig.bank.accountNumber.includes("PENDIENTE");
   return (
     <>
-      <InternalHero eyebrow="Donar" title="Tu aporte puede convertirse en una respuesta concreta." intro="En esta primera versión, las donaciones se gestionarán mediante transferencia bancaria y confirmación directa con la Fundación." image="/images/placeholders/community-service-hero.png" imageAlt="Imagen conceptual de servicio comunitario" />
+      <InternalHero eyebrow="Donar" title="Tu aporte puede convertirse en una respuesta concreta." intro="En esta primera versión, las donaciones se gestionarán mediante transferencia bancaria y confirmación directa con la Fundación." image={sitePhotography.donateHero.src} imageAlt={sitePhotography.donateHero.alt} imagePosition={sitePhotography.donateHero.position} />
       <section className="section-pad bg-[#FCFBF8]">
         <div className="page-shell grid gap-8 lg:grid-cols-[1.05fr_.95fr]">
           <div className="rounded-[2rem] border border-stone-200 bg-white p-6 shadow-xl shadow-stone-200/40 sm:p-10">

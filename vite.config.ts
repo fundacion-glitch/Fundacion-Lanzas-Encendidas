@@ -51,6 +51,15 @@ export default defineConfig(async () => {
   const { cloudflare } = await import("@cloudflare/vite-plugin");
 
   return {
+    environments: {
+      client: {
+        build: {
+          // Vinext dynamically imports navigation exports by name in production.
+          // Keep those exports intact so Link navigation and prefetch can resolve them.
+          rolldownOptions: { preserveEntrySignatures: "strict" as const },
+        },
+      },
+    },
     server: {
       ...(managedLinux ? { host: "0.0.0.0", allowedHosts: ["terminal.local"] } : {}),
       ...(isCodexSeatbeltSandbox ? { watch: { useFsEvents: false, usePolling: true } } : {}),

@@ -40,6 +40,8 @@ export function SiteHeader() {
               <Link
                 key={item.href}
                 href={item.href}
+                target={item.href.startsWith("https://") ? "_blank" : undefined}
+                rel={item.href.startsWith("https://") ? "noopener noreferrer" : undefined}
                 aria-current={active ? "page" : undefined}
                 className={cn(
                   "rounded-full px-3 py-2 text-sm font-medium text-stone-700 transition hover:bg-stone-100 hover:text-stone-950 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#AF090F]",
@@ -53,10 +55,12 @@ export function SiteHeader() {
         </nav>
 
         <div className="flex items-center gap-2">
-          <Link href="/donar" className="button-primary hidden sm:inline-flex">
-            <HeartHandshake aria-hidden="true" className="size-4" />
-            Donar
-          </Link>
+          <div className="hidden sm:block">
+            <Link href="/donar" className="button-primary">
+              <HeartHandshake aria-hidden="true" className="size-4" />
+              Donar
+            </Link>
+          </div>
 
           <Sheet>
             <SheetTrigger asChild>
@@ -81,6 +85,8 @@ export function SiteHeader() {
                   <SheetClose asChild key={item.href}>
                     <Link
                       href={item.href}
+                      target={item.href.startsWith("https://") ? "_blank" : undefined}
+                      rel={item.href.startsWith("https://") ? "noopener noreferrer" : undefined}
                       className={cn(
                         "rounded-xl px-4 py-3.5 text-base font-medium text-stone-800 hover:bg-white",
                         pathname === item.href && "bg-white text-[#AF090F] shadow-sm",

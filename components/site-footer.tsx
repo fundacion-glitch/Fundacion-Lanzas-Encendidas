@@ -2,10 +2,9 @@ import Image from "next/image";
 import Link from "next/link";
 import { Mail, MapPin } from "lucide-react";
 import { navItems, siteConfig } from "@/config/site";
+import { OfficialSocialLinks } from "@/components/official-social-links";
 
 export function SiteFooter() {
-  const socialLinks = Object.entries(siteConfig.social).filter(([, value]) => Boolean(value));
-
   return (
     <footer className="bg-[#17120F] text-stone-300">
       <div className="page-shell grid gap-12 py-16 md:grid-cols-[1.25fr_.75fr_1fr]">
@@ -27,7 +26,7 @@ export function SiteFooter() {
           <ul className="mt-5 grid gap-3 text-sm">
             {navItems.slice(1).map((item) => (
               <li key={item.href}>
-                <Link href={item.href} className="transition hover:text-white">{item.label}</Link>
+                <Link href={item.href} target={item.href.startsWith("https://") ? "_blank" : undefined} rel={item.href.startsWith("https://") ? "noopener noreferrer" : undefined} className="transition hover:text-white">{item.label}</Link>
               </li>
             ))}
             <li><Link href="/donar" className="transition hover:text-white">Donar</Link></li>
@@ -45,11 +44,7 @@ export function SiteFooter() {
             ) : (
               <p className="flex items-center gap-3"><Mail className="size-4 text-[#F2C36F]" aria-hidden="true" />Correo institucional pendiente</p>
             )}
-            {socialLinks.length > 0 && (
-              <div className="flex flex-wrap gap-4">
-                {socialLinks.map(([name, href]) => <a key={name} href={href} rel="noreferrer" target="_blank" className="capitalize hover:text-white">{name}</a>)}
-              </div>
-            )}
+            <OfficialSocialLinks linkClassName="hover:text-white" />
           </div>
         </div>
       </div>

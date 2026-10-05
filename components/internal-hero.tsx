@@ -1,9 +1,9 @@
 import Image from "next/image";
 
-export function InternalHero({ eyebrow, title, intro, image, imageAlt }: { eyebrow: string; title: string; intro: string; image?: string; imageAlt?: string }) {
+export function InternalHero({ eyebrow, title, intro, image, imageAlt, imagePosition }: { eyebrow: string; title: string; intro: string; image?: string; imageAlt?: string; imagePosition?: string }) {
   return (
     <section className="relative overflow-hidden bg-[#17120F] text-white">
-      {image && <Image src={image} alt={imageAlt ?? ""} fill priority sizes="100vw" className="object-cover opacity-30" />}
+      {image && <Image src={image} alt={imageAlt ?? ""} fill priority sizes="100vw" className="object-cover opacity-30" style={{ objectPosition: imagePosition }} />}
       <div className="absolute inset-0 bg-gradient-to-r from-[#17120F] via-[#17120F]/85 to-[#17120F]/30" />
       <div className="page-shell relative py-20 sm:py-28">
         <p className="eyebrow text-[#F2C36F]">{eyebrow}</p>
