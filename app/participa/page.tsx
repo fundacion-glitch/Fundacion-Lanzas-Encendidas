@@ -1,5 +1,5 @@
+import { pageMetadata } from "@/lib/seo";
 import { sitePhotography } from "@/data/site-photography";
-import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowRight, HeartHandshake, MessageCircle, Shirt } from "lucide-react";
 import { InternalHero } from "@/components/internal-hero";
@@ -10,11 +10,7 @@ import { solidarityArticles, solidarityArticlesInquiry } from "@/data/solidarity
 import { OfficialSocialLinks } from "@/components/official-social-links";
 import { getWhatsAppUrl } from "@/lib/whatsapp";
 
-export const metadata: Metadata = {
-  title: "Participa",
-  description: "Participa como voluntario, apoya con artículos solidarios o realiza una donación a Fundación Lanzas Encendidas.",
-  alternates: { canonical: "/participa" },
-};
+export const metadata = pageMetadata("/participa");
 
 export default function ParticipaPage() {
   const whatsappUrl = getWhatsAppUrl("Hola, quisiera información para participar con Fundación Lanzas Encendidas.");

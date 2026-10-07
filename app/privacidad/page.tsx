@@ -1,6 +1,6 @@
-import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = { title: "Política de privacidad", alternates: { canonical: "/privacidad" } };
+export const metadata = pageMetadata("/privacidad");
 
 export default function PrivacidadPage() {
   return (

@@ -1,5 +1,5 @@
+import { pageMetadata } from "@/lib/seo";
 import { sitePhotography } from "@/data/site-photography";
-import type { Metadata } from "next";
 import Link from "next/link";
 import { Building2, CircleCheck, HeartHandshake, LockKeyhole, MessageCircle } from "lucide-react";
 import { CopyButton } from "@/components/copy-button";
@@ -7,11 +7,7 @@ import { InternalHero } from "@/components/internal-hero";
 import { siteConfig } from "@/config/site";
 import { getWhatsAppUrl } from "@/lib/whatsapp";
 
-export const metadata: Metadata = {
-  title: "Donar",
-  description: "Información para apoyar a Fundación Lanzas Encendidas mediante transferencia bancaria.",
-  alternates: { canonical: "/donar" },
-};
+export const metadata = pageMetadata("/donar");
 
 export default function DonarPage() {
   const whatsappUrl = getWhatsAppUrl();

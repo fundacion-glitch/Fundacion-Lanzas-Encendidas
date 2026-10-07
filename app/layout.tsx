@@ -1,3 +1,4 @@
+import { allowIndexing, institutionalStructuredData } from "@/lib/seo";
 import type { Metadata } from "next";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
@@ -12,20 +13,7 @@ export const metadata: Metadata = {
     template: "%s | Fundación Lanzas Encendidas",
   },
   description: siteConfig.description,
-  alternates: { canonical: "/" },
-  openGraph: {
-    type: "website",
-    locale: "es_DO",
-    siteName: siteConfig.name,
-    title: siteConfig.name,
-    description: siteConfig.description,
-    url: SITE_URL,
-  },
-  twitter: {
-    card: "summary",
-    title: siteConfig.name,
-    description: siteConfig.description,
-  },
+  robots: { index: allowIndexing, follow: true, googleBot: { index: allowIndexing, follow: true, "max-image-preview": "large" } },
   icons: {
     icon: "/favicon.svg",
     shortcut: "/favicon.svg",
@@ -48,13 +36,7 @@ export default function RootLayout({
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "NGO",
-              name: siteConfig.name,
-              url: SITE_URL,
-              description: siteConfig.description,
-            }),
+            __html: JSON.stringify(institutionalStructuredData()).replace(/</g, "\\u003c"),
           }}
         />
       </body>

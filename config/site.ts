@@ -1,4 +1,4 @@
-export const SITE_URL = "https://fundacion-lanzas-encendidas.reynaldoc505.chatgpt.site";
+export const SITE_URL = "https://fundacionlanzasencendidas.com";
 
 export const siteConfig = {
   name: "Fundación Lanzas Encendidas",

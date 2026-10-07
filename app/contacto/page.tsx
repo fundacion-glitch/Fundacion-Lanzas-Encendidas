@@ -1,15 +1,11 @@
+import { pageMetadata } from "@/lib/seo";
 import { sitePhotography } from "@/data/site-photography";
-import type { Metadata } from "next";
 import { Mail, MessageCircle, Share2 } from "lucide-react";
 import { InternalHero } from "@/components/internal-hero";
 import { OfficialSocialLinks } from "@/components/official-social-links";
 import { contactWhatsAppUrl, siteConfig } from "@/config/site";
 
-export const metadata: Metadata = {
-  title: "Contacto",
-  description: "Canales de contacto e información institucional de Fundación Lanzas Encendidas.",
-  alternates: { canonical: "/contacto" },
-};
+export const metadata = pageMetadata("/contacto");
 
 export default function ContactoPage() {
   const whatsappUrl = contactWhatsAppUrl;

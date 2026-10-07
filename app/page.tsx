@@ -1,3 +1,4 @@
+import { pageMetadata } from "@/lib/seo";
 import { contactWhatsAppUrl } from "@/config/site";
 import { sitePhotography } from "@/data/site-photography";
 import Image from "next/image";
@@ -19,6 +20,8 @@ import { impact, impactAreas, impactReport } from "@/data/impact";
 import { MediaGallery } from "@/components/media-gallery";
 
 const areaIcons = [Boxes, Users, BookOpenText, Building2, HeartHandshake, Sparkles];
+
+export const metadata = pageMetadata("/");
 
 export default function HomePage() {
   return (

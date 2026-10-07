@@ -1,16 +1,12 @@
+import { pageMetadata } from "@/lib/seo";
 import { sitePhotography } from "@/data/site-photography";
-import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, Eye, HandHeart, Heart, HeartHandshake, Scale, ShieldCheck, Sparkles, Users } from "lucide-react";
 import { InternalHero } from "@/components/internal-hero";
 import { foundation } from "@/data/foundation";
 
-export const metadata: Metadata = {
-  title: "Nosotros",
-  description: "Conoce la misión, la visión y los valores de Fundación Lanzas Encendidas.",
-  alternates: { canonical: "/nosotros" },
-};
+export const metadata = pageMetadata("/nosotros");
 
 const valueIcons = {
   Solidaridad: HeartHandshake,

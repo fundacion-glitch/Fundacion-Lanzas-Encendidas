@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/seo";
 import Link from "next/link";
 import Image from "next/image";
 import { ArrowRight, Landmark, ShieldCheck } from "lucide-react";
@@ -8,11 +8,7 @@ import { foundation } from "@/data/foundation";
 import { impact, impactAreas, impactReport } from "@/data/impact";
 import { galleryMedia } from "@/data/gallery-media";
 
-export const metadata: Metadata = {
-  title: "Transparencia",
-  description: "Información institucional, impacto documentado y evidencias del trabajo de Fundación Lanzas Encendidas.",
-  alternates: { canonical: "/transparencia" },
-};
+export const metadata = pageMetadata("/transparencia");
 
 const evidenceImages = galleryMedia.filter((item) => item.type === "image").slice(0, 2);
 
