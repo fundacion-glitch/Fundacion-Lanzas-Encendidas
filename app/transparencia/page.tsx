@@ -27,7 +27,7 @@ export default function TransparenciaPage() {
           <h2 className="mt-4 text-4xl font-semibold tracking-[-.035em] sm:text-5xl">Información institucional</h2>
           <div className="mt-10">
             <dl className="divide-y divide-stone-300/70">
-              {[["Nombre", siteConfig.name], ["RNC", siteConfig.rnc], ["RNI / Registro", siteConfig.registration], ["Provincia / Municipio", siteConfig.provinceMunicipality], ["Naturaleza jurídica", foundation.legalNature], ["Domicilio", siteConfig.address], ["Ámbito institucional", siteConfig.area]].map(([label, value]) => <div key={label} className="grid gap-2 py-4 sm:grid-cols-[150px_1fr]"><dt className="text-sm text-stone-600">{label}</dt><dd className="text-sm leading-7 text-stone-800">{value}</dd></div>)}
+              {[["Nombre", siteConfig.name], ["RNI / Registro", siteConfig.registration], ["Naturaleza jurídica", foundation.legalNature], ["Ámbito institucional", siteConfig.area]].map(([label, value]) => <div key={label} className="grid gap-2 py-4 sm:grid-cols-[150px_1fr]"><dt className="text-sm text-stone-600">{label}</dt><dd className="text-sm leading-7 text-stone-800">{value}</dd></div>)}
             </dl>
           </div>
           <div className="mt-10 grid gap-5 md:grid-cols-2">

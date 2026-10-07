@@ -5,13 +5,9 @@ export const siteConfig = {
   shortName: "Lanzas Encendidas",
   description:
     "Asociación sin fines de lucro de República Dominicana dedicada al apoyo humanitario, social y comunitario.",
-  address:
-    "Calle I, No. 16, Barrio Guachupita, Consuelo, San Pedro de Macorís, República Dominicana",
   area: "Todo el territorio nacional",
   email: "Info@fundacionlanzasencendidas.com",
-  rnc: "4-30-45171-1",
   registration: "28974/2026",
-  provinceMunicipality: "San Pedro de Macorís, Municipio Consuelo",
   whatsapp: "18096158218",
   whatsappDefaultMessage:
     "Hola, quisiera información sobre cómo realizar una donación a Fundación Lanzas Encendidas.",
@@ -27,7 +23,6 @@ export const siteConfig = {
     accountType: "PENDIENTE_DE_CONFIGURAR",
     accountNumber: "PENDIENTE_DE_CONFIGURAR",
     holder: "Fundación Lanzas Encendidas",
-    rnc: "4-30-45171-1",
   },
 } as const;
 

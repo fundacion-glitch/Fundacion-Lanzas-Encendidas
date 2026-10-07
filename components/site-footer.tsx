@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { Mail, MapPin } from "lucide-react";
+import { Mail } from "lucide-react";
 import { navItems, siteConfig } from "@/config/site";
 import { OfficialSocialLinks } from "@/components/official-social-links";
 
@@ -36,7 +36,6 @@ export function SiteFooter() {
         <div>
           <h2 className="text-sm font-semibold uppercase tracking-[.16em] text-[#F2C36F]">Información</h2>
           <div className="mt-5 space-y-4 text-sm leading-6 text-stone-400">
-            <p className="flex items-start gap-3"><MapPin className="mt-1 size-4 shrink-0 text-[#F2C36F]" aria-hidden="true" />{siteConfig.address}</p>
             {siteConfig.email ? (
               <a className="flex items-center gap-3 hover:text-white" href={`mailto:${siteConfig.email}`}>
                 <Mail className="size-4 text-[#F2C36F]" aria-hidden="true" />{siteConfig.email}

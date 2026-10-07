@@ -54,13 +54,6 @@ export default function RootLayout({
               name: siteConfig.name,
               url: SITE_URL,
               description: siteConfig.description,
-              address: {
-                "@type": "PostalAddress",
-                streetAddress: "Calle I, No. 16, Barrio Guachupita",
-                addressLocality: "Consuelo",
-                addressRegion: "San Pedro de Macorís",
-                addressCountry: "DO",
-              },
             }),
           }}
         />
